@@ -1,0 +1,21 @@
+.formBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+
+  .formElementText {
+    margin: 10px;
+    display: block;
+  }
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  .formButton {
+    width: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
+.NavBar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  z-index: 1;
+  ul {
+    position: relative;
+    top: 25%;
+    margin-top: 0;
+    li {
+      display: inline;
+      margin: 20px;
+      .navbar-item {
+        text-decoration: none;
+        font-size: large;
+        color: white;
+      }
+    }
+  }
+}
+
+.App {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: scroll;
+
+  background-image: url(https://images.unsplash.com/photo-1536566482680-fca31930a0bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80);
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.homeBox {
+  color: white;
+  font-size: xx-large;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+
+  p {
+    text-align: center;
+  }
+}
+
+.pizzaListDiv {
+  color: white;
+  margin-top: 100px;
+  text-align: center;
+
+  .pizzaBox {
+    background-color: white;
+    color: black;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+    border-style: ridge;
+    border-color: black;
+  }
+}
+
+.ing {
+  margin: 5px;
+  display: inline;
+}
+
+.navbar-item {
+  text-decoration: none;
+  font-size: large;
+  color: white;
+}
+
+.sauces {
+  color: white;
+}
+
+.deleteIng{
+  color: red;
+}
