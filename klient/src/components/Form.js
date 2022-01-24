@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { useForm, Controller } from 'react-hook-form';
 import { API } from './App';
 import './styles/Form.scss'
-import { payForOrder, removePizzas, removeSauces } from '../redux/actions'
+import { payForOrder, removePizzas, removeSauces, addSauces } from '../redux/actions'
 import { useNavigate } from 'react-router-dom'
 import emailjs from '@emailjs/browser';
 
@@ -17,8 +17,8 @@ const Form = ({ handleClose }) => {
 
 
     const pizzaOrdered = useSelector(state => state.orderedPizzas)
+    const sauces = useSelector(state => state.sauces)
     let saucesOrdered = useSelector(state => state.orderedSauces)
-    // const ingredients = useSelector(state => state.ingredients)
     const totalPrice = useSelector(state => state.total)
 
     const sendEmail = (e) => {
@@ -26,12 +26,13 @@ const Form = ({ handleClose }) => {
         form.current.sauces.value = orderInfo.sauces
         form.current.total.value = orderInfo.total
 
-        emailjs.sendForm('service_94vvkol', 'template_00b90xv', form.current, 'user_7oN9nUxs4dwbfDLBbFvqa')
+        return (emailjs.sendForm('service_94vvkol', 'template_00b90xv', form.current, 'user_7oN9nUxs4dwbfDLBbFvqa')
             .then((result) => {
-                console.log(result.text);
+                return true
             }, (error) => {
-                console.log(error.text);
-            });
+                alert(error.text);
+                return false
+            }))
     };
 
     const date = {
@@ -78,11 +79,16 @@ const Form = ({ handleClose }) => {
             .then(response => response.json())
             .then(data => {
                 if (data.message === "Order accepted!") {
-                    sendEmail(dataForm)
-                    dispatch(payForOrder())
-                    dispatch(removePizzas())
-                    dispatch(removeSauces())
-                    navigate('/')
+                    if (sendEmail(dataForm)) {
+                        dispatch(payForOrder())
+                        dispatch(removePizzas())
+                        dispatch(removeSauces())
+                        dispatch(addSauces(sauces))
+                        navigate('/')
+                    }
+                    else {
+                        alert('Problems with sending an e-mail')
+                    }
                 } else {
                     alert(JSON.stringify(data))
                 }

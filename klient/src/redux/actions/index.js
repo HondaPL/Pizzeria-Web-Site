@@ -6,6 +6,7 @@ export const orderPizza = (pizza) => {
 }
 
 export const orderSauce = (sauce) => {
+    console.log(sauce)
     return{
         type: 'ORDER_SAUCE',
         data: sauce
@@ -20,6 +21,7 @@ export const deleteOrderedPizza = (pizzaId) => {
 }
 
 export const removeIngredientFromPizza = (pizzaId, ingId, price) => {
+    console.log(`${pizzaId} ${ingId} ${price}`)
     return{
         type: 'REMOVE_INGREDIENT',
         index: pizzaId,

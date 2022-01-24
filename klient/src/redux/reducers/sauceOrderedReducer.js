@@ -9,7 +9,6 @@ const SauceReducer = (state = [], action) => {
             action.sauce.count--
             if (action.sauce.count === 0)
                 state = [...state].filter((x, index) => {
-                    console.log(x)
                     return (x.id !== action.sauce.id)
                 })
             return [...state];

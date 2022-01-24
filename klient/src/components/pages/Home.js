@@ -1,7 +1,7 @@
 const Home = () => {
     return (
         <div className='homeBox'>
-            <p>Welcome To ADAMO PIZZA</p>
+            <p>WELCOME TO ADAMO PIZZERIA</p>
         </div>
     )
 }
