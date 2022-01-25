@@ -101,9 +101,9 @@ const Form = ({ handleClose }) => {
                 <div className='formBox'>
                     <div className='column1'>
                         <input readOnly hidden label="myMail" type="text" name="myMail" value="order.adamopizza@gmail.com" />
-                        <input readOnly hidden type="text" name="pizzas" />
-                        <input readOnly hidden type="text" name="sauces" />
-                        <input readOnly hidden type="text" name="total" />
+                        <input readOnly hidden label="pizza" type="text" name="pizzas" />
+                        <input readOnly hidden label="sauces" type="text" name="sauces" />
+                        <input readOnly hidden label="total" type="text" name="total" />
                         <Controller
                             className='formElement'
                             name="firstName"
