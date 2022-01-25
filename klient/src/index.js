@@ -2,6 +2,7 @@ import React from 'react';
 import './components/styles/App.scss';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import Form from './components/Form';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import AllReducers from './redux/reducers';
@@ -16,9 +17,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <App />
+        <Form />
       </Router>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root') || document.createElement('div') //For testing
 );

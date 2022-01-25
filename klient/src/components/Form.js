@@ -15,7 +15,6 @@ const Form = ({ handleClose }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
-
     const pizzaOrdered = useSelector(state => state.orderedPizzas)
     const sauces = useSelector(state => state.sauces)
     let saucesOrdered = useSelector(state => state.orderedSauces)
@@ -67,9 +66,10 @@ const Form = ({ handleClose }) => {
     const orderInfo = createOrderInfo()
 
     const onSubmit = (dataForm) => {
-        if (date.order.sauce.length === 0) {
-            date.order.sauce = null;
-        }
+        if (date.order.sauce)
+            if (date.order.sauce.length === 0) {
+                date.order.sauce = null;
+            }
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -100,7 +100,7 @@ const Form = ({ handleClose }) => {
             <form ref={form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='formBox'>
                     <div className='column1'>
-                        <input readOnly hidden type="text" name="myMail" value="order.adamopizza@gmail.com" />
+                        <input readOnly hidden label="myMail" type="text" name="myMail" value="order.adamopizza@gmail.com" />
                         <input readOnly hidden type="text" name="pizzas" />
                         <input readOnly hidden type="text" name="sauces" />
                         <input readOnly hidden type="text" name="total" />

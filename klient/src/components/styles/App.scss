@@ -28,6 +28,12 @@ body {
   }
 }
 
+.return-home {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
 .App {
   height: 100%;
   position: absolute;
@@ -162,7 +168,7 @@ blue: #4ca2cd
 }
 
 .pizza__details {
-  display: flex; 
+  display: flex;
   margin-top: auto;
   margin: 0 auto;
   justify-content: center;

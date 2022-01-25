@@ -1,6 +1,6 @@
 import { useSelector, } from 'react-redux'
 import { PizzaCard } from '../pages/PizzaCard'
-import { LoadingCard } from './LoadingCard'
+import LoadingCard from './LoadingCard'
 
 const PizzaList = () => {
     const pizzaList = useSelector(state => state.pizzas)
