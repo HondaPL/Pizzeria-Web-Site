@@ -2,7 +2,6 @@ import React from 'react';
 import './components/styles/App.scss';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import Form from './components/Form';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import AllReducers from './redux/reducers';
